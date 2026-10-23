@@ -1,0 +1,5 @@
+export interface Versioned<T>{version:number;value:T}
+export class OptimisticStore<T>{private records=new Map<string,Versioned<T>>();get(key:string){const v=this.records.get(key);return v?structuredClone(v):undefined}put(key:string,value:T,expectedVersion=0){const current=this.records.get(key)?.version??0;if(current!==expectedVersion)throw new Error('Concurrency conflict');const next={version:current+1,value:structuredClone(value)};this.records.set(key,next);return structuredClone(next)}}
+export class IdempotencyLedger<T>{private values=new Map<string,T>();async execute(key:string,operation:()=>Promise<T>):Promise<T>{if(this.values.has(key))return this.values.get(key)!;const result=await operation();this.values.set(key,result);return result}}
+export class CapacityLimiter{private active=0;constructor(readonly limit:number){if(limit<1)throw new Error('Invalid limit')}async run<T>(job:()=>Promise<T>):Promise<T>{if(this.active>=this.limit)throw new Error('Backpressure: capacity exceeded');this.active++;try{return await job()}finally{this.active--}}}
+// Memory ledger is process-local and does not prevent concurrent duplicate executions.

@@ -1,0 +1,7 @@
+{
+  "name":"product-intelligence-platform","private":true,"version":"0.1.0","type":"module",
+  "workspaces":["apps/*","packages/*"],
+  "scripts":{"dev":"concurrently -k -n api,console -c cyan,green \"npm run dev -w @pi/api\" \"npm run dev -w @pi/console\"","dev:api":"npm run dev -w @pi/api","dev:console":"npm run dev -w @pi/console","build":"npm run build -w @pi/shared && npm run build -w @pi/sdk && npm run build -w @pi/api && npm run build -w @pi/console","test":"npm run test -w @pi/api","typecheck":"npm run typecheck -w @pi/api && npm run typecheck -w @pi/sdk && npm run typecheck -w @pi/console"},
+  "devDependencies":{"concurrently":"^9.1.2","typescript":"^5.8.3","tsx":"^4.19.4","@types/node":"^22.15.0"},
+  "engines":{"node":">=22.13.0"}
+}

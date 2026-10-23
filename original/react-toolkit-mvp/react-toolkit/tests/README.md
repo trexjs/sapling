@@ -1,0 +1,1 @@
+# Tests\n\nInitial unit tests cover partial state updates, subscriptions, query caching, prefix invalidation, and in-flight request deduplication. Expand coverage using the matrix in `docs/TESTING.md`; this is not yet a production-complete suite.\n

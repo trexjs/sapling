@@ -1,0 +1,14 @@
+apiVersion: v2
+name: app-service
+description: Reusable secure-by-default chart for a stateless HTTP application
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+kubeVersion: ">=1.25.0-0"
+keywords:
+  - kubernetes
+  - helm
+  - web
+  - api
+maintainers:
+  - name: Platform Engineering

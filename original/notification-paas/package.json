@@ -1,0 +1,14 @@
+{
+  "name": "notification-paas",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "build": "pnpm -r build",
+    "db:generate": "pnpm --filter @notify/api db:generate",
+    "db:migrate": "pnpm --filter @notify/api db:migrate"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

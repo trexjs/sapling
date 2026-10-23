@@ -1,0 +1,14 @@
+import { z } from 'zod';
+export const money = z.number().int().nonnegative().safe();
+export const tenantInput = z.object({ name: z.string().min(2).max(120), slug: z.string().regex(/^[a-z0-9-]{3,60}$/) });
+export const productInput = z.object({ name: z.string().min(1).max(200), description: z.string().max(3000).default(''), priceMinor: money, currency: z.string().length(3).transform(v => v.toUpperCase()), metadata: z.record(z.unknown()).default({}) });
+export const orderInput = z.object({ productId: z.string().uuid(), quantity: z.number().int().min(1).max(100), customerEmail: z.string().email(), idempotencyKey: z.string().min(8).max(160) });
+export const subscriptionInput = z.object({ customerEmail: z.string().email(), productId: z.string().uuid(), interval: z.enum(['month','year']) });
+export const affiliateInput = z.object({ code: z.string().regex(/^[a-zA-Z0-9_-]{3,40}$/), commissionBps: z.number().int().min(0).max(10000) });
+export const licenseInput = z.object({ orderId: z.string().uuid(), expiresAt: z.string().datetime().optional() });
+export type ProductInput = z.infer<typeof productInput>;
+export type OrderInput = z.infer<typeof orderInput>;
+export type SubscriptionInput = z.infer<typeof subscriptionInput>;
+export type AffiliateInput = z.infer<typeof affiliateInput>;
+export type LicenseInput = z.infer<typeof licenseInput>;
+export type ApiErrorBody = { error: { code: string; message: string; requestId?: string } };

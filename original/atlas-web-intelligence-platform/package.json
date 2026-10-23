@@ -1,0 +1,1 @@
+{"name":"web-intelligence-platform","private":true,"workspaces":["apps/*","packages/*"],"scripts":{"dev:api":"npm run dev -w @atlas/api","dev:web":"npm run dev -w @atlas/web","build":"npm run build --workspaces --if-present","db:generate":"npm run db:generate -w @atlas/api","db:migrate":"npm run db:migrate -w @atlas/api"},"engines":{"node":">=22"}}

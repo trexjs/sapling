@@ -1,0 +1,110 @@
+[
+  {
+    "letter": "A",
+    "package": "globalization",
+    "title": "Globalization",
+    "source": "A_Internationalization_Localization_Regional_Behavior.pdf"
+  },
+  {
+    "letter": "B",
+    "package": "accessibility",
+    "title": "Accessibility",
+    "source": "B_Accessibility_Inclusive_Design.pdf"
+  },
+  {
+    "letter": "C",
+    "package": "request-context",
+    "title": "Request Context",
+    "source": "C_Context_Propagation_Request_Lifecycle.pdf"
+  },
+  {
+    "letter": "D",
+    "package": "api-contracts",
+    "title": "Api Contracts",
+    "source": "D_API_Contract_Governance.pdf"
+  },
+  {
+    "letter": "E",
+    "package": "security-privacy",
+    "title": "Security Privacy",
+    "source": "E_Security_Privacy_Engineering.pdf"
+  },
+  {
+    "letter": "F",
+    "package": "entitlements",
+    "title": "Entitlements",
+    "source": "F_Entitlements_Plans_Commercial_Controls.pdf"
+  },
+  {
+    "letter": "G",
+    "package": "workflows",
+    "title": "Workflows",
+    "source": "G_Workflow_State_Machine_Infrastructure.pdf"
+  },
+  {
+    "letter": "H",
+    "package": "search",
+    "title": "Search",
+    "source": "H_Search_Discovery_Indexing.pdf"
+  },
+  {
+    "letter": "I",
+    "package": "data-lifecycle",
+    "title": "Data Lifecycle",
+    "source": "I_Data_Lifecycle_Schema_Evolution.pdf"
+  },
+  {
+    "letter": "J",
+    "package": "coordination",
+    "title": "Coordination",
+    "source": "J_Concurrency_Coordination.pdf"
+  },
+  {
+    "letter": "K",
+    "package": "execution",
+    "title": "Execution",
+    "source": "K_Background_Processing_Resource_Lifecycle.pdf"
+  },
+  {
+    "letter": "L",
+    "package": "communications",
+    "title": "Communications",
+    "source": "L_Notifications_Communications_Templates.pdf"
+  },
+  {
+    "letter": "M",
+    "package": "audit-compliance",
+    "title": "Audit Compliance",
+    "source": "M_Auditability_Compliance_Evidence.pdf"
+  },
+  {
+    "letter": "N",
+    "package": "control-plane",
+    "title": "Control Plane",
+    "source": "N_Platform_Operations_Control_Plane.pdf"
+  },
+  {
+    "letter": "O",
+    "package": "finops",
+    "title": "Finops",
+    "source": "O_Cost_Management_Resource_Accounting.pdf"
+  },
+  {
+    "letter": "P",
+    "package": "developer-platform",
+    "title": "Developer Platform",
+    "source": "P_Developer_Experience_Platform_Governance.pdf"
+  },
+  {
+    "letter": "Q",
+    "package": "quality-engineering",
+    "title": "Quality Engineering",
+    "source": "Q_Testing_Quality_Engineering.pdf"
+  },
+  {
+    "letter": "R",
+    "package": "ai-governance",
+    "title": "Ai Governance",
+    "source": "R_AI_Model_Governance.pdf"
+  }
+]

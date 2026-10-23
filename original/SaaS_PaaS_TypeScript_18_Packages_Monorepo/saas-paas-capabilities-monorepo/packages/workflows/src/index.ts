@@ -1,0 +1,7 @@
+export type WorkflowStatus='pending'|'running'|'completed'|'failed'|'awaiting-approval';
+export interface WorkflowStep<T> {id:string;execute:(state:T)=>Promise<T>;compensate?:(state:T)=>Promise<void>}
+export interface WorkflowSnapshot<T>{id:string;version:number;status:WorkflowStatus;state:T;completedSteps:string[];error?:string}
+export interface WorkflowStore<T>{put(snapshot:WorkflowSnapshot<T>):Promise<void>;get(id:string):Promise<WorkflowSnapshot<T>|undefined>}
+export class MemoryWorkflowStore<T> implements WorkflowStore<T>{private data=new Map<string,WorkflowSnapshot<T>>();async put(x:WorkflowSnapshot<T>){this.data.set(x.id,structuredClone(x))}async get(id:string){const v=this.data.get(id);return v?structuredClone(v):undefined}}
+export class WorkflowRunner<T>{constructor(private store:WorkflowStore<T>){}async run(id:string,initial:T,steps:readonly WorkflowStep<T>[]):Promise<WorkflowSnapshot<T>>{let snap=await this.store.get(id)??{id,version:1,status:'pending' as WorkflowStatus,state:initial,completedSteps:[]};if(snap.status==='completed')return snap;snap.status='running';await this.store.put(snap);try{for(const step of steps){if(snap.completedSteps.includes(step.id))continue;snap.state=await step.execute(snap.state);snap.completedSteps.push(step.id);await this.store.put(snap)}snap.status='completed'}catch(e){snap.status='failed';snap.error=String(e)}await this.store.put(snap);return snap}}
+// Persistence and step effects need atomic/idempotent adapters before production use.

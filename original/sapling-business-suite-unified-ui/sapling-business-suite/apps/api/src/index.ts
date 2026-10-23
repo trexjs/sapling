@@ -1,0 +1,28 @@
+import { createBusinessRouter } from './business-routes.js';
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import jwt from 'jsonwebtoken';
+import { z } from 'zod';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
+import { and, eq } from 'drizzle-orm';
+import * as schema from './schema.js';
+const secret=process.env.JWT_SECRET;
+if(!secret || secret.length<24) throw new Error('Set a strong JWT_SECRET');
+if(!process.env.DATABASE_URL) throw new Error('DATABASE_URL required');
+const pool=new Pool({connectionString:process.env.DATABASE_URL});
+const db=drizzle(pool,{schema});
+const app=express();app.use(cors());app.use(express.json({limit:'1mb'}));
+app.get('/health',(_req,res)=>res.json({status:'ok'}));
+const resources=['campaigns','content_assets','audiences','marketing_events','jobs','candidates','employees','leave_requests','performance_reviews','training_courses','training_enrollments','contacts','leads','opportunities','quotes','contracts','customers','onboardings','tickets','sla_policies','feedback','renewals','tasks','activities'] as const;
+const fields:Record<string,string[]>={
+ campaigns:['name','channel','status','budget'],content_assets:['title','kind','status','url'],audiences:['name','description','segment'],marketing_events:['contactId','campaignId','eventType','value'],jobs:['title','department','status','location'],candidates:['name','email','jobId','stage'],employees:['name','email','department','status','managerId'],leave_requests:['employeeId','startDate','endDate','status'],performance_reviews:['employeeId','period','rating','notes'],training_courses:['title','description','status'],training_enrollments:['employeeId','courseId','status'],contacts:['name','email','company','source'],leads:['contactId','source','status','score'],opportunities:['leadId','name','stage','amount'],quotes:['opportunityId','status','amount','validUntil'],contracts:['opportunityId','status','signedAt'],customers:['name','email','company','status'],onboardings:['customerId','status','ownerId'],tickets:['customerId','subject','priority','status'],sla_policies:['name','priority','responseHours','resolutionHours'],feedback:['customerId','rating','comment'],renewals:['customerId','dueDate','amount','status'],tasks:['title','ownerId','status','dueDate'],activities:['entityType','entityId','description','actorId']};
+type Actor={sub:string;org:string;role:string};
+app.use('/api',(req,res,next)=>{const token=req.header('authorization')?.replace(/^Bearer /,'');try{if(!token)throw Error('missing token');res.locals.actor=jwt.verify(token,secret!) as Actor;next()}catch{res.status(401).json({error:'unauthorized'})}});
+app.use('/api/v2',createBusinessRouter(pool));
+app.get('/api/me',(req,res)=>res.json(res.locals.actor));
+app.get('/api/:resource',async(req,res)=>{try{const name=req.params.resource;if(!resources.includes(name as any))return res.status(404).json({error:'unknown resource'});const actor=res.locals.actor as Actor;const table=(schema as any)[name];const rows=await db.select().from(table).where(eq(table.organizationId,actor.org)).limit(100);res.json(rows)}catch(e){console.error(e);res.status(500).json({error:'internal_error'})}});
+app.post('/api/:resource',async(req,res)=>{try{const name=req.params.resource;if(!resources.includes(name as any))return res.status(404).json({error:'unknown resource'});const actor=res.locals.actor as Actor;if(!['admin','editor'].includes(actor.role))return res.status(403).json({error:'forbidden'});const body=z.record(z.unknown()).parse(req.body);const allowed=fields[name];const data=Object.fromEntries(Object.entries(body).filter(([k,v])=>allowed.includes(k)&&typeof v==='string'));if(!Object.keys(data).length)return res.status(400).json({error:'provide at least one valid field'});const table=(schema as any)[name];const [record]=await db.insert(table).values({...data,organizationId:actor.org}).returning();await db.insert(schema.auditLogs).values({organizationId:actor.org,actorId:actor.sub,action:'create',resource:name,resourceId:record.id});res.status(201).json(record)}catch(e){console.error(e);res.status(400).json({error:'invalid_request'})}});
+app.patch('/api/:resource/:id',async(req,res)=>{try{const name=req.params.resource;if(!resources.includes(name as any))return res.status(404).json({error:'unknown resource'});const actor=res.locals.actor as Actor;if(!['admin','editor'].includes(actor.role))return res.status(403).json({error:'forbidden'});const id=z.string().uuid().parse(req.params.id);const body=z.record(z.unknown()).parse(req.body);const data=Object.fromEntries(Object.entries(body).filter(([k,v])=>fields[name].includes(k)&&typeof v==='string'));if(!Object.keys(data).length)return res.status(400).json({error:'empty update'});const table=(schema as any)[name];const [record]=await db.update(table).set(data).where(and(eq(table.id,id),eq(table.organizationId,actor.org))).returning();if(!record)return res.status(404).json({error:'not_found'});await db.insert(schema.auditLogs).values({organizationId:actor.org,actorId:actor.sub,action:'update',resource:name,resourceId:id});res.json(record)}catch(e){console.error(e);res.status(400).json({error:'invalid_request'})}});
+app.listen(Number(process.env.PORT||4000),()=>console.log('Sapling API listening'));

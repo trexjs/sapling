@@ -1,0 +1,290 @@
+{
+  "apps": {
+    "ReachOS": {
+      "Marketing": [
+        "campaigns",
+        "audiences",
+        "content_assets",
+        "marketing_events"
+      ],
+      "GrowthOS": [
+        "funnels",
+        "experiments",
+        "attribution_models"
+      ]
+    },
+    "DealOS": {
+      "CRM": [
+        "contacts",
+        "leads",
+        "opportunities",
+        "quotes",
+        "contracts"
+      ],
+      "PartnerOS": [
+        "partners",
+        "referrals",
+        "commissions"
+      ]
+    },
+    "RevenueOS": {
+      "RevenueOS": [
+        "plans",
+        "subscriptions",
+        "invoices",
+        "payments",
+        "usage_records",
+        "entitlements"
+      ]
+    },
+    "CareOS": {
+      "CareOS": [
+        "customers",
+        "tickets",
+        "sla_policies"
+      ],
+      "SuccessOS": [
+        "onboardings",
+        "renewals",
+        "health_scores",
+        "success_plans"
+      ],
+      "KnowledgeOS": [
+        "knowledge_articles",
+        "knowledge_categories"
+      ]
+    },
+    "PeopleOS": {
+      "PeopleOS": [
+        "employees",
+        "leave_requests",
+        "performance_reviews",
+        "training_courses",
+        "training_enrollments"
+      ],
+      "TalentOS": [
+        "jobs",
+        "candidates",
+        "interviews",
+        "offers"
+      ],
+      "WorkforceOS": [
+        "capacity_plans",
+        "resource_assignments"
+      ]
+    },
+    "FinanceOS": {
+      "FinanceOS": [
+        "accounts",
+        "journal_entries",
+        "receivables",
+        "payables"
+      ],
+      "SpendOS": [
+        "budgets",
+        "expenses",
+        "expense_approvals"
+      ],
+      "ProcureOS": [
+        "vendors",
+        "purchase_orders"
+      ]
+    },
+    "GovernanceOS": {
+      "LegalOS": [
+        "legal_agreements",
+        "policy_acknowledgements"
+      ],
+      "TrustOS": [
+        "risks",
+        "controls",
+        "evidence_records"
+      ]
+    },
+    "ProductOS": {
+      "ProductOS": [
+        "products",
+        "features",
+        "feature_requests",
+        "roadmaps"
+      ],
+      "ProjectOS": [
+        "projects",
+        "sprints",
+        "project_tasks",
+        "milestones"
+      ]
+    },
+    "OperationsOS": {
+      "ServiceOS": [
+        "incidents",
+        "changes",
+        "service_catalog"
+      ],
+      "WorkOS": [
+        "workflow_definitions",
+        "approval_requests"
+      ],
+      "AssetOS": [
+        "assets",
+        "software_licenses"
+      ]
+    },
+    "BusinessIntelligence": {
+      "InsightOS": [
+        "metric_definitions",
+        "dashboard_definitions",
+        "saved_reports"
+      ]
+    }
+  },
+  "fields": {
+    "campaigns": [
+      "channel",
+      "budget",
+      "startDate",
+      "endDate",
+      "objective"
+    ],
+    "experiments": [
+      "hypothesis",
+      "variant",
+      "allocation",
+      "primaryMetric"
+    ],
+    "leads": [
+      "email",
+      "source",
+      "score",
+      "ownerId"
+    ],
+    "opportunities": [
+      "accountId",
+      "value",
+      "currency",
+      "expectedClose"
+    ],
+    "plans": [
+      "currency",
+      "unitAmount",
+      "billingInterval",
+      "trialDays"
+    ],
+    "subscriptions": [
+      "customerId",
+      "planId",
+      "startDate",
+      "billingAnchor"
+    ],
+    "invoices": [
+      "customerId",
+      "dueDate",
+      "currency",
+      "totalMinor"
+    ],
+    "payments": [
+      "invoiceId",
+      "providerReference",
+      "amountMinor"
+    ],
+    "employees": [
+      "email",
+      "department",
+      "jobTitle",
+      "startDate"
+    ],
+    "leave_requests": [
+      "employeeId",
+      "fromDate",
+      "toDate",
+      "leaveType"
+    ],
+    "candidates": [
+      "email",
+      "jobId",
+      "stage"
+    ],
+    "offers": [
+      "candidateId",
+      "salaryMinor",
+      "currency",
+      "startDate"
+    ],
+    "journal_entries": [
+      "accountId",
+      "debitMinor",
+      "creditMinor",
+      "postedAt"
+    ],
+    "expenses": [
+      "employeeId",
+      "amountMinor",
+      "currency",
+      "category"
+    ],
+    "purchase_orders": [
+      "vendorId",
+      "amountMinor",
+      "currency",
+      "requestedBy"
+    ],
+    "tickets": [
+      "customerId",
+      "priority",
+      "assignedTo",
+      "dueAt"
+    ],
+    "renewals": [
+      "customerId",
+      "subscriptionId",
+      "renewalDate"
+    ],
+    "projects": [
+      "ownerId",
+      "startDate",
+      "targetDate"
+    ],
+    "sprints": [
+      "projectId",
+      "startDate",
+      "endDate"
+    ],
+    "incidents": [
+      "severity",
+      "serviceId",
+      "incidentCommander"
+    ],
+    "workflow_definitions": [
+      "trigger",
+      "steps",
+      "version"
+    ],
+    "approval_requests": [
+      "requesterId",
+      "approverId",
+      "decision"
+    ],
+    "assets": [
+      "assetTag",
+      "assigneeId",
+      "purchaseDate"
+    ],
+    "metric_definitions": [
+      "sqlKey",
+      "aggregation",
+      "unit"
+    ]
+  },
+  "labels": {
+    "ReachOS": "Marketing & Growth",
+    "DealOS": "Sales & Partnerships",
+    "RevenueOS": "Subscriptions & Billing",
+    "CareOS": "Customer Experience",
+    "PeopleOS": "People & Talent",
+    "FinanceOS": "Finance & Procurement",
+    "GovernanceOS": "Legal & Trust",
+    "ProductOS": "Product & Delivery",
+    "OperationsOS": "Operations & Automation",
+    "BusinessIntelligence": "Business Intelligence"
+  }
+}

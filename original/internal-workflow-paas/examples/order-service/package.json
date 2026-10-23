@@ -1,0 +1,1 @@
+{"name":"@flow/example-order","version":"0.1.0","type":"module","scripts":{"dev":"tsx index.ts"},"dependencies":{"@flow/sdk":"*","express":"^4.21.2"},"devDependencies":{"tsx":"^4.19.3","@types/express":"^4.17.21"}}

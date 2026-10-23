@@ -1,0 +1,15 @@
+Release: {{ .Release.Name }}
+Namespace: {{ .Release.Namespace }}
+
+Check resources:
+  kubectl get deploy,pods,svc -n {{ .Release.Namespace }} -l app.kubernetes.io/instance={{ .Release.Name }}
+
+Service DNS:
+  {{ include "app-service.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.port }}
+
+{{- if .Values.ingress.enabled }}
+Ingress is enabled. Confirm ingress controller, DNS, and TLS configuration for your cluster.
+{{- else }}
+Ingress is disabled. Use port-forward for a local smoke test:
+  kubectl port-forward svc/{{ include "app-service.fullname" . }} 8080:{{ .Values.service.port }} -n {{ .Release.Namespace }}
+{{- end }}

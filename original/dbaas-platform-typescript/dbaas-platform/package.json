@@ -1,0 +1,15 @@
+{
+  "name": "internal-dbaas",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "db:generate": "pnpm --filter @dbaas/api db:generate",
+    "db:migrate": "pnpm --filter @dbaas/api db:migrate"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

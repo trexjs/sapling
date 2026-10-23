@@ -1,0 +1,16 @@
+{
+  "name": "mobile-delivery-paas",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --filter @mobile/db build && pnpm --filter @mobile/core build && pnpm --parallel --filter @mobile/api --filter @mobile/web dev",
+    "build": "pnpm -r build",
+    "db:generate": "pnpm --filter @mobile/db generate",
+    "db:migrate": "pnpm --filter @mobile/db migrate",
+    "worker": "pnpm --filter @mobile/worker dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

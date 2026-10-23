@@ -1,0 +1,11 @@
+import { pgTable, uuid, varchar, jsonb, integer, timestamp, text, uniqueIndex } from 'drizzle-orm/pg-core';
+const id = () => uuid('id').primaryKey().defaultRandom();
+const created = () => timestamp('created_at',{withTimezone:true}).defaultNow().notNull();
+export const users = pgTable('cms_users',{id:id(),email:varchar('email',{length:255}).notNull().unique(),passwordHash:text('password_hash').notNull(),role:varchar('role',{length:40}).notNull().default('editor'),createdAt:created()});
+export const models = pgTable('cms_models',{slug:varchar('slug',{length:100}).primaryKey(),name:varchar('name',{length:255}).notNull(),kind:varchar('kind',{length:30}).notNull(),fields:jsonb('fields').$type<Record<string,unknown>>().notNull(),createdAt:created()});
+export const entries = pgTable('cms_entries',{id:id(),model:varchar('model',{length:100}).notNull().references(()=>models.slug),locale:varchar('locale',{length:20}).notNull().default('en'),status:varchar('status',{length:30}).notNull().default('draft'),data:jsonb('data').$type<Record<string,unknown>>().notNull(),version:integer('version').notNull().default(1),publishAt:timestamp('publish_at',{withTimezone:true}),createdAt:created(),updatedAt:timestamp('updated_at',{withTimezone:true}).defaultNow().notNull()});
+export const revisions = pgTable('cms_revisions',{id:id(),entryId:uuid('entry_id').notNull().references(()=>entries.id,{onDelete:'cascade'}),version:integer('version').notNull(),snapshot:jsonb('snapshot').notNull(),createdAt:created()});
+export const assets = pgTable('cms_assets',{id:id(),key:text('key').notNull(),filename:text('filename').notNull(),mime:text('mime').notNull(),size:integer('size').notNull(),metadata:jsonb('metadata').notNull().default({}),createdAt:created()});
+export const locales = pgTable('cms_locales',{code:varchar('code',{length:20}).primaryKey(),name:text('name').notNull()});
+export const webhooks = pgTable('cms_webhooks',{id:id(),url:text('url').notNull(),secret:text('secret').notNull(),events:jsonb('events').$type<string[]>().notNull(),createdAt:created()});
+export const audit = pgTable('cms_audit',{id:id(),actor:text('actor').notNull(),action:text('action').notNull(),entity:text('entity').notNull(),payload:jsonb('payload').notNull().default({}),createdAt:created()});

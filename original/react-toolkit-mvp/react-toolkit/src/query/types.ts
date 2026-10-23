@@ -1,0 +1,8 @@
+import type { ReactNode } from "react";
+export type QueryKey = readonly unknown[];
+export type QueryStatus = "pending" | "success" | "error";
+export interface QueryOptions<T> { queryKey: QueryKey; queryFn: (context: { signal: AbortSignal; queryKey: QueryKey }) => Promise<T>; enabled?: boolean; staleTime?: number; gcTime?: number; retry?: number | boolean; retryDelay?: number | ((attempt: number) => number); refetchOnWindowFocus?: boolean; refetchInterval?: number; initialData?: T; }
+export interface QueryResult<T> { data: T | undefined; error: unknown; status: QueryStatus; isPending: boolean; isLoading: boolean; isFetching: boolean; isSuccess: boolean; isError: boolean; isStale: boolean; refetch: () => Promise<T | undefined>; }
+export interface MutationOptions<TData, TVariables> { mutationFn: (variables: TVariables) => Promise<TData>; onMutate?: (variables: TVariables) => unknown | Promise<unknown>; onSuccess?: (data: TData, variables: TVariables, context: unknown) => void | Promise<void>; onError?: (error: unknown, variables: TVariables, context: unknown) => void | Promise<void>; onSettled?: (data: TData | undefined, error: unknown, variables: TVariables, context: unknown) => void | Promise<void>; }
+export interface MutationResult<TData, TVariables> { data: TData | undefined; error: unknown; status: "idle" | "pending" | "success" | "error"; isPending: boolean; mutate: (variables: TVariables) => void; mutateAsync: (variables: TVariables) => Promise<TData>; reset: () => void; }
+export interface QueryClientProviderProps { client: import("./QueryClient.js").QueryClient; children: ReactNode; }

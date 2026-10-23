@@ -1,0 +1,8 @@
+import {randomUUID} from 'node:crypto';
+export interface RequestContext {version:1; requestId:string; traceId:string; tenantId?:string; actorId?:string; locale?:string; region?:string; deadlineEpochMs?:number}
+export type TrustedClaims={tenantId?:string;actorId?:string};
+export function createContext(claims:TrustedClaims={},options:Partial<Omit<RequestContext,'version'|'tenantId'|'actorId'>>={}):RequestContext {return {version:1,requestId:options.requestId??randomUUID(),traceId:options.traceId??randomUUID(),...claims,...options}}
+export function requireTenant(context:RequestContext):string {if(!context.tenantId)throw new Error('Trusted tenant context required');return context.tenantId}
+export function checkDeadline(context:RequestContext,now=Date.now()){if(context.deadlineEpochMs!==undefined && now>=context.deadlineEpochMs)throw new Error('Request deadline exceeded')}
+export function serializeContext(ctx:RequestContext):Record<string,string>{const fields:Record<string,string>={'x-request-id':ctx.requestId,'x-trace-id':ctx.traceId};if(ctx.locale)fields['x-locale']=ctx.locale;if(ctx.deadlineEpochMs)fields['x-deadline-ms']=String(ctx.deadlineEpochMs);return fields}
+export function fromTrustedBoundary(headers:Record<string,string|undefined>,claims:TrustedClaims):RequestContext {const deadline=headers['x-deadline-ms'];const ts=deadline?Number(deadline):undefined;if(ts!==undefined&&!Number.isFinite(ts))throw new Error('Invalid deadline');return createContext(claims,{requestId:headers['x-request-id']??randomUUID(),traceId:headers['x-trace-id']??randomUUID(),locale:headers['x-locale'],deadlineEpochMs:ts})}

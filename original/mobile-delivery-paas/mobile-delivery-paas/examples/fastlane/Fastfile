@@ -1,0 +1,17 @@
+default_platform(:android)
+platform :android do
+  desc 'Build and upload to internal Play track'
+  lane :bundle do
+    gradle(task: 'bundle', build_type: 'Release', project_dir: 'android')
+    # Configure json_key_data via secret injection; never commit service account JSON.
+    upload_to_play_store(track: 'internal', aab: Dir['android/app/build/outputs/bundle/release/*.aab'].first, skip_upload_metadata: true, skip_upload_images: true, skip_upload_screenshots: true)
+  end
+end
+platform :ios do
+  desc 'Build and upload to TestFlight'
+  lane :build do
+    build_app(workspace: 'ios/App.xcworkspace', scheme: 'App')
+    # Configure App Store Connect API key via secret injection.
+    upload_to_testflight
+  end
+end

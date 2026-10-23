@@ -1,0 +1,1 @@
+{"name":"@flow/sdk","version":"0.1.0","type":"module","scripts":{"build":"tsc -p tsconfig.json"},"dependencies":{"zod":"^3.24.2"},"devDependencies":{"typescript":"^5.8.3"},"exports":{".":"./src/index.ts"}}

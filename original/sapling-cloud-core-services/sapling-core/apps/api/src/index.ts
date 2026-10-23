@@ -1,0 +1,5 @@
+import 'dotenv/config';import express from 'express';import helmet from 'helmet';import cors from 'cors';import {ZodError} from 'zod';import {identity} from './identity.js';import {documentRoutes} from './documents.js';import {audit} from './audit.js';import {gateway} from './gateway.js';
+const app=express();app.disable('x-powered-by');app.use(helmet());app.use(cors({origin:process.env.CORS_ORIGIN?.split(',')??false}));app.use(express.json({limit:'256kb'}));
+app.get('/health',(_req,res)=>res.json({status:'ok'}));app.use('/v1/identity',identity);app.use('/v1/documents',documentRoutes);app.use('/v1/audit',audit);app.use('/v1/gateway',gateway);
+app.use((err:unknown,_req:express.Request,res:express.Response,_next:express.NextFunction)=>{if(err instanceof ZodError)return res.status(400).json({error:'validation_failed',details:err.flatten()});console.error(err);res.status(500).json({error:'internal_error'})});
+const server=app.listen(Number(process.env.PORT??4000),()=>console.log('Sapling API ready'));process.on('SIGTERM',()=>server.close());

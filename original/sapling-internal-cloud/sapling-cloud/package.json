@@ -1,0 +1,16 @@
+{
+  "name": "sapling-cloud",
+  "private": true,
+  "packageManager": "npm@10.9.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @sapling/api",
+    "dev:console": "npm run dev -w @sapling/console",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:push": "npm run db:push -w @sapling/api"
+  }
+}

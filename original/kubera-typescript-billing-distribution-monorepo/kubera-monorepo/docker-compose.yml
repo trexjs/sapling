@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: kubera
+      POSTGRES_PASSWORD: kubera
+      POSTGRES_DB: kubera
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kubera"]
+      interval: 5s
+      retries: 10
+  valkey:
+    image: valkey/valkey:8-alpine
+    ports: ["6379:6379"]
+volumes:
+  pgdata:

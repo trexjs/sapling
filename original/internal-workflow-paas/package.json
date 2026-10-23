@@ -1,0 +1,17 @@
+{
+  "name": "internal-workflow-paas",
+  "private": true,
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w @flow/api",
+    "dev:worker": "npm run dev -w @flow/worker",
+    "dev:web": "npm run dev -w @flow/web",
+    "build": "npm run build --workspaces --if-present",
+    "db:push": "npm run db:push -w @flow/db",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}

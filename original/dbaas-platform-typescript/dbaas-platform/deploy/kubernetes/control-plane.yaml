@@ -1,0 +1,78 @@
+# Reference deployment. Requires secrets, ingress TLS, PostgreSQL, operator CRDs and hardened identity integration.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbaas-api
+  namespace: dbaas-system
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: dbaas-api}
+  template:
+    metadata:
+      labels: {app: dbaas-api}
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: api
+          image: registry.example.com/dbaas-api:replace-with-digest
+          ports: [{containerPort: 4000}]
+          envFrom: [{secretRef: {name: dbaas-api-env}}]
+          readinessProbe: {httpGet: {path: /health/ready, port: 4000}, initialDelaySeconds: 5}
+          livenessProbe: {httpGet: {path: /health/live, port: 4000}, initialDelaySeconds: 5}
+          securityContext: {allowPrivilegeEscalation: false, runAsNonRoot: true, capabilities: {drop: [ALL]}}
+          resources: {requests: {cpu: 100m, memory: 128Mi}, limits: {cpu: 500m, memory: 512Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: dbaas-api, namespace: dbaas-system}
+spec:
+  selector: {app: dbaas-api}
+  ports: [{port: 80, targetPort: 4000}]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: dbaas-worker, namespace: dbaas-system}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: {name: dbaas-provisioner, namespace: dbaas-resources}
+rules:
+  - apiGroups: [postgresql.cnpg.io]
+    resources: [clusters]
+    verbs: [get,list,create,patch,delete]
+  - apiGroups: [kafka.strimzi.io]
+    resources: [kafkatopics]
+    verbs: [get,list,create,patch,delete]
+  - apiGroups: [mongodbcommunity.mongodb.com]
+    resources: [mongodbcommunity]
+    verbs: [get,list,create,patch,delete]
+  - apiGroups: [batch]
+    resources: [cronjobs]
+    verbs: [get,list,create,update,patch,delete]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata: {name: dbaas-provisioner, namespace: dbaas-resources}
+subjects: [{kind: ServiceAccount, name: dbaas-worker, namespace: dbaas-system}]
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: Role, name: dbaas-provisioner}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: dbaas-worker, namespace: dbaas-system}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: dbaas-worker}
+  template:
+    metadata:
+      labels: {app: dbaas-worker}
+    spec:
+      serviceAccountName: dbaas-worker
+      containers:
+        - name: worker
+          image: registry.example.com/dbaas-api:replace-with-digest
+          command: [node, apps/api/dist/worker.js]
+          envFrom: [{secretRef: {name: dbaas-api-env}}]
+          securityContext: {allowPrivilegeEscalation: false, runAsNonRoot: true, capabilities: {drop: [ALL]}}
+          resources: {requests: {cpu: 100m, memory: 128Mi}, limits: {cpu: 500m, memory: 512Mi}}

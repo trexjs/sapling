@@ -1,0 +1,36 @@
+# Replace every example value and review all cluster-specific assumptions before use.
+replicaCount: 3
+image:
+  repository: registry.example.com/team/app
+  tag: "REPLACE_WITH_IMMUTABLE_TAG"
+  pullPolicy: IfNotPresent
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: app.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: app-production-tls
+      hosts:
+        - app.example.com
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 12
+  targetCPUUtilizationPercentage: 70
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 2
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: "1"
+    memory: 512Mi
+# Enable only after reviewing your cluster's NetworkPolicy engine, DNS and app egress requirements.
+networkPolicy:
+  enabled: false

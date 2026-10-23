@@ -1,0 +1,33 @@
+{
+  "name": "@your-org/react-toolkit",
+  "version": "0.1.0",
+  "description": "A lightweight React toolkit with original hooks, state management, and query caching.",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./hooks": { "types": "./dist/hooks/index.d.ts", "import": "./dist/hooks/index.js" },
+    "./state": { "types": "./dist/state/index.d.ts", "import": "./dist/state/index.js" },
+    "./query": { "types": "./dist/query/index.d.ts", "import": "./dist/query/index.js" }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": { "react": ">=18.0.0" },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "react": "^18.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "jsdom": "^25.0.0",
+    "@testing-library/react": "^16.0.0"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

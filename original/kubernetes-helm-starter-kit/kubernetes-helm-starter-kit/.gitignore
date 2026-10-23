@@ -1,0 +1,6 @@
+dist/
+rendered.yaml
+*.tgz
+.env
+.env.*
+!.env.example

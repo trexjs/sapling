@@ -1,0 +1,15 @@
+import { z } from 'zod';
+export const engineSchema=z.enum(['postgres','valkey','mongodb','kafka','cronjob']);
+export const planSchema=z.enum(['dev','standard','critical']);
+export const resourceCreateSchema=z.object({serviceId:z.string().uuid(),name:z.string().regex(/^[a-z][a-z0-9-]{2,42}$/),engine:engineSchema,plan:planSchema.default('dev'),config:z.record(z.unknown()).default({})}).strict();
+export const teamCreateSchema=z.object({name:z.string().min(3).max(100),slug:z.string().regex(/^[a-z][a-z0-9-]{2,42}$/)}).strict();
+export const serviceCreateSchema=z.object({teamId:z.string().uuid(),name:z.string().min(3).max(100),environment:z.enum(['development','staging','production']),repository:z.string().url().optional()}).strict();
+export const jobCreateSchema=z.object({serviceId:z.string().uuid(),name:z.string().regex(/^[a-z][a-z0-9-]{2,42}$/),schedule:z.string().min(5).max(100),timeZone:z.string().default('Etc/UTC'),image:z.string().min(3),command:z.array(z.string()).optional(),concurrencyPolicy:z.enum(['Allow','Forbid','Replace']).default('Forbid')}).strict();
+export type ResourceCreate=z.infer<typeof resourceCreateSchema>;
+export type TeamCreate=z.infer<typeof teamCreateSchema>;
+export type ServiceCreate=z.infer<typeof serviceCreateSchema>;
+export type JobCreate=z.infer<typeof jobCreateSchema>;
+export type ResourceEngine=z.infer<typeof engineSchema>;
+export type ResourcePlan=z.infer<typeof planSchema>;
+export type OperationStatus='queued'|'running'|'succeeded'|'failed';
+export type ResourceStatus='pending'|'provisioning'|'ready'|'failed'|'deleting'|'deleted';
