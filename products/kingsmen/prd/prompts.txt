@@ -1,0 +1,21 @@
+
+
+
+Clone of IAM like Keycloak, lets call it kingsman create a roadmap on what are the set of features that we want to provide for a v0 product launch
+- realm
+- users
+- user groups
+- client
+- realm settings
+- authentication
+
+The idea is we will create a central auth provider platform which will expose the Login & Register Component with apis incase needed so what can be done is 
+In some other project we will install this package or the apis with our own custom Auth Screen just login so it will get validated in the Kingsman Platform & provide jwt saying like this user is valid & can access protected routes
+
+
+
+
+Now that we have the plan we will start of with the implementation aspect .
+- For tech use MERN, styled-components ,react-router-dom v6 , context api for complex state management use vite template with typescript & nodemon in backend for server restart
+- we will not focus on DEVOPS part our now as we can just do think of MVP
+- we will cover Phase 1 & 2 development for now both server & UI as well as api integrations to our kingsman platform
