@@ -23,6 +23,8 @@ Similarly, SaaS describes how software is delivered, while B2B/B2C describes the
 ## 2. The reusable capabilities every application can draw from
 
 For Sapling, I would organize the platform into five architectural layers.
+<img width="844" height="674" alt="image" src="https://github.com/user-attachments/assets/b4d5cf82-0538-4632-8fb3-1ef7c145210b" />
+
 
 Layer 5 — Application Experience
 
