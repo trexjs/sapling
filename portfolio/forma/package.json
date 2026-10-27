@@ -1,0 +1,25 @@
+{
+    "name": "typeform-clone",
+    "version": "1.0.0",
+    "description": "A Typeform clone built with MERN stack",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm run dev",
+        "client": "cd UI && npm run dev",
+        "build": "cd UI && npm run build",
+        "install-all": "npm install && cd server && npm install && cd ../UI && npm install"
+    },
+    "keywords": [
+        "typeform",
+        "forms",
+        "mern",
+        "react",
+        "node"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

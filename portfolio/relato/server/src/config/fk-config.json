@@ -1,0 +1,674 @@
+{
+  "theme": {
+    "metadata": {
+      "name": "UI Configuration",
+      "version": "0.0.1",
+      "description": "UI Configuration for the application"
+    },
+    "layout": "left_to_right",
+    "colors": {
+      "surface": {
+        "neutral": {
+          "default": "#ffffff",
+          "hover": "#fafafa",
+          "pressed": "#f5f5f5"
+        },
+        "brand": {
+          "default": "#2a55e5",
+          "hover": "#1c41d6",
+          "pressed": "#112ab8"
+        },
+        "accent": {
+          "default": "#ffc200",
+          "hover": "#f9a825",
+          "pressed": "#ed9416"
+        },
+        "information": {
+          "default": "#fafafa",
+          "hover": "#f5f5f5",
+          "pressed": "#eeeeee"
+        },
+        "inverse": {
+          "default": "#212121",
+          "hover": "#424242",
+          "pressed": "#666666"
+        },
+        "success": {
+          "default": "#e7f8ec",
+          "hover": "#b9ebc8",
+          "pressed": "#8adea3"
+        },
+        "warning": {
+          "default": "#fef7e9",
+          "hover": "#f5efd4",
+          "pressed": "#fdfaf9"
+        },
+        "danger": {
+          "default": "#f5baba",
+          "hover": "#f9cbce",
+          "pressed": "#12a29e"
+        },
+        "selected": {
+          "default": "#f0f5ff",
+          "hover": "#c9e1ff",
+          "pressed": "#abc8ff"
+        },
+        "disabled": {
+          "default": "#fafafa",
+          "hover": "#fafafa",
+          "pressed": "#fafafa"
+        }
+      },
+      "tag": {
+        "promotion": "#c70055",
+        "saving": "#ffe43b",
+        "coupon": "#00b2a9",
+        "category": "#aeeee8",
+        "recommended": "#212121"
+      },
+      "text": {
+        "primary": "#212121",
+        "secondary": "#666666",
+        "brand": "#2a55e5",
+        "information": "#2a55e5",
+        "inverse": "#ffffff",
+        "success": "#1d9934",
+        "warning": "#bb129",
+        "danger": "#df4535",
+        "selected": "#2a55e5",
+        "disabled": "#9e9e9e"
+      },
+      "skeleton": {
+        "neutral": "#f5f5f5",
+        "subtle": "#fafafa"
+      },
+      "icon": {
+        "primary": "#212121",
+        "secondary": "#666666",
+        "brand": "#2a55e5",
+        "information": "#2a55e5",
+        "inverse": "#ffffff",
+        "success": "#1d9934",
+        "warning": "#bb129",
+        "danger": "#df4535",
+        "selected": "#2a55e5",
+        "disabled": "#e0e0e0"
+      },
+      "stroke": {
+        "primary": "#666666",
+        "secondary": "#f5f5f5",
+        "brand": "#2a55e5",
+        "brandlight": "#75a1ff",
+        "accent": "#ffc200",
+        "information": "#75a1ff",
+        "inverse": "#ffffff",
+        "success": "#6adba3",
+        "warning": "#fddf9f",
+        "danger": "#df4535",
+        "dangerlight": "#f2a09e",
+        "selected": "#2a55e5",
+        "disabled": "#e0e0e0"
+      }
+    },
+    "spacing": {
+      "0": "0px",
+      "xxxs": "2px",
+      "xxs": "4px",
+      "xs": "6px",
+      "s": "8px",
+      "m": "10px",
+      "l": "12px",
+      "xl": "16px",
+      "xxl": "24px",
+      "xxxl": "32px"
+    },
+    "radius": {
+      "0": "0px",
+      "xxs": "2px",
+      "xs": "4px",
+      "s": "8px",
+      "m": "12px",
+      "l": "16px",
+      "xl": "20px",
+      "xxl": "24px",
+      "xxxl": "32px"
+    },
+    "stroke": {
+      "0": "0px",
+      "standard": "1px",
+      "thin": "2px",
+      "thick": "3px"
+    },
+    "shadow": {
+      "overflow": "0px 2px 4px 0px #00000000",
+      "overlay": "0px 4px 8px 0px #00000000",
+      "floating": "0px 8px 16px 0px #00000000"
+    },
+    "zIndex": {
+      "level0": 0,
+      "level1": 1,
+      "level2": 2,
+      "level3": 3,
+      "level99": 99
+    },
+    "aspectRatio": {
+      "square": "1/1",
+      "landscape": "4/3",
+      "portrait": "3/4",
+      "wide": "16/9"
+    },
+    "opacity": {
+      "disabled": "30%",
+      "loading": "20%",
+      "mask": "40%"
+    },
+    "typography": {
+      "heading": {
+        "xs": {
+          "weight": 500,
+          "size": "15px",
+          "letterSpacing": "15px",
+          "lineHeight": "24px"
+        },
+        "m": {
+          "weight": 500,
+          "size": "17px",
+          "letterSpacing": "15px",
+          "lineHeight": "24px"
+        },
+        "l": {
+          "weight": 500,
+          "size": "19px",
+          "letterSpacing": "15px",
+          "lineHeight": "28px"
+        }
+      },
+      "body": {
+        "s": {
+          "weight": 500,
+          "size": "13px",
+          "letterSpacing": "0px",
+          "lineHeight": "20px"
+        },
+        "sBold": {
+          "weight": 600,
+          "size": "13px",
+          "letterSpacing": "0px",
+          "lineHeight": "20px"
+        }
+      },
+      "subtext": {
+        "s": {
+          "weight": 400,
+          "size": "11px",
+          "letterSpacing": "15px",
+          "lineHeight": "16px"
+        }
+      }
+    }
+  },
+  "getFeatures": {
+    "promotionsBanner": {
+      "name": "lorem...",
+      "video_link": "https://youtu.be/N0fHAg9aoyY?feature=shared"
+    },
+    "dcs": {
+      "enableUniversalSearch": true
+    }
+  },
+  "userConfig": {
+    "profile": {
+      "seller_id": "auyksn1mnx5c1rx5",
+      "display_name": "testsellersupport",
+      "business_name": "COAL INDIA",
+      "preferences": {
+        "mode": "DARK",
+        "currency": "INR",
+        "lang": "ENG"
+      }
+    },
+    "access": {
+      "loki": {
+        "stream": false,
+        "present": false,
+        "records": false
+      }
+    },
+    "platforms": [
+      {
+        "mobile": false
+      },
+      {
+        "web": true
+      }
+    ],
+    "default": {
+      "bastion": true,
+      "clickSupport": true
+    }
+  },
+  "policies": {
+    "dataRetention": 60,
+    "tier": {
+      "current": "BASIC",
+      "final": "ENTERPRISE"
+    },
+    "appId": "System Generated"
+  },
+  "uiConfig": {
+    "partnersConfig": {
+      "homePage": {
+        "images": {
+          "hero": {
+            "desktop": "https://img1a.flixcart.com/fk-p-fk-sp-partner-dashboard/17th-Nov-20225WALx1coqElFYGtLXICArgg7sQIVGGCB/landing_page_top_banner_desktop.jpg",
+            "mobile": "https://static-assets-web.flixcart.com/fk-p-fk-sellerhub/21st-Nov-2022ErVbXKy_KT8nZ4ms9J_ECXznqUM2AZ6-/Banner_HP_Mobile.png"
+          }
+        },
+        "requestsFullfilledCount": "14,000+",
+        "sellersCount": "30,000+",
+        "verifiedPartnersCount": "4,000+"
+      }
+    },
+    "tallyReportsVideo": "https://youtu.be/N0fHAg9aoyY?feature=shared",
+    "showInventoryUpdateLagBanner": false,
+    "pollingDurationConfig": {
+      "homePageCountPolling": "1800000",
+      "orderProcessingPolling": "30000"
+    },
+    "enableServiceWorker": true
+  },
+  "subjectIdentifier": [
+    {
+      "name": "English",
+      "category": "core_language",
+      "code": "ENGLISH"
+    },
+    {
+      "name": "Hindi",
+      "category": "core_language",
+      "code": "HINDI"
+    },
+    {
+      "name": "Physics",
+      "category": "science",
+      "code": "PHYSICS"
+    },
+    {
+      "name": "Chemistry",
+      "category": "science",
+      "code": "CHEMISTRY"
+    },
+    {
+      "name": "Mathematics",
+      "category": "science_commerce_humanities",
+      "code": "MATHEMATICS"
+    },
+    {
+      "name": "Biology",
+      "category": "science",
+      "code": "BIOLOGY"
+    },
+    {
+      "name": "Computer Science",
+      "category": "science_commerce",
+      "code": "COMPUTER_SCIENCE"
+    },
+    {
+      "name": "Informatics Practices",
+      "category": "science_commerce",
+      "code": "INFORMATICS_PRACTICES"
+    },
+    {
+      "name": "Applied Mathematics",
+      "category": "science_commerce",
+      "code": "APPLIED_MATHEMATICS"
+    },
+    {
+      "name": "Accountancy",
+      "category": "commerce",
+      "code": "ACCOUNTANCY"
+    },
+    {
+      "name": "Business Studies",
+      "category": "commerce",
+      "code": "BUSINESS_STUDIES"
+    },
+    {
+      "name": "Economics",
+      "category": "commerce_humanities",
+      "code": "ECONOMICS"
+    },
+    {
+      "name": "History",
+      "category": "humanities",
+      "code": "HISTORY"
+    },
+    {
+      "name": "Political Science",
+      "category": "humanities",
+      "code": "POLITICAL_SCIENCE"
+    },
+    {
+      "name": "Geography",
+      "category": "humanities",
+      "code": "GEOGRAPHY"
+    },
+    {
+      "name": "Psychology",
+      "category": "humanities",
+      "code": "PSYCHOLOGY"
+    },
+    {
+      "name": "Sociology",
+      "category": "humanities",
+      "code": "SOCIOLOGY"
+    },
+    {
+      "name": "Legal Studies",
+      "category": "humanities",
+      "code": "LEGAL_STUDIES"
+    },
+    {
+      "name": "Home Science",
+      "category": "humanities_elective",
+      "code": "HOME_SCIENCE"
+    },
+    {
+      "name": "Sanskrit",
+      "category": "other_language",
+      "code": "SANSKRIT"
+    },
+    {
+      "name": "Urdu",
+      "category": "other_language",
+      "code": "URDU"
+    },
+    {
+      "name": "Tamil",
+      "category": "other_language",
+      "code": "TAMIL"
+    },
+    {
+      "name": "Telugu",
+      "category": "other_language",
+      "code": "TELUGU"
+    },
+    {
+      "name": "Bengali",
+      "category": "other_language",
+      "code": "BENGALI"
+    },
+    {
+      "name": "Marathi",
+      "category": "other_language",
+      "code": "MARATHI"
+    },
+    {
+      "name": "Gujarati",
+      "category": "other_language",
+      "code": "GUJARATI"
+    },
+    {
+      "name": "French",
+      "category": "other_language",
+      "code": "FRENCH"
+    },
+    {
+      "name": "German",
+      "category": "other_language",
+      "code": "GERMAN"
+    },
+    {
+      "name": "Spanish",
+      "category": "other_language",
+      "code": "SPANISH"
+    },
+    {
+      "name": "Environmental Education",
+      "category": "mandatory_internal",
+      "code": "ENVIRONMENTAL_EDUCATION"
+    },
+    {
+      "name": "Physical Education",
+      "category": "cross_stream_elective",
+      "code": "PHYSICAL_EDUCATION"
+    },
+    {
+      "name": "Entrepreneurship",
+      "category": "cross_stream_elective",
+      "code": "ENTREPRENEURSHIP"
+    },
+    {
+      "name": "Fine Arts",
+      "category": "cross_stream_elective",
+      "code": "FINE_ARTS"
+    },
+    {
+      "name": "Music",
+      "category": "cross_stream_elective",
+      "code": "MUSIC"
+    },
+    {
+      "name": "Dance",
+      "category": "cross_stream_elective",
+      "code": "DANCE"
+    },
+    {
+      "name": "Artificial Intelligence (AI)",
+      "category": "skill_elective",
+      "code": "ARTIFICIAL_INTELLIGENCE"
+    },
+    {
+      "name": "Information Technology",
+      "category": "skill_elective",
+      "code": "INFORMATION_TECHNOLOGY"
+    },
+    {
+      "name": "Retail",
+      "category": "skill_elective",
+      "code": "RETAIL"
+    },
+    {
+      "name": "Financial Markets Management",
+      "category": "skill_elective",
+      "code": "FINANCIAL_MARKETS_MANAGEMENT"
+    },
+    {
+      "name": "Banking",
+      "category": "skill_elective",
+      "code": "BANKING"
+    },
+    {
+      "name": "Mass Media Studies",
+      "category": "skill_elective",
+      "code": "MASS_MEDIA_STUDIES"
+    },
+    {
+      "name": "Yoga",
+      "category": "skill_elective",
+      "code": "YOGA"
+    },
+    {
+      "name": "Agriculture",
+      "category": "skill_elective",
+      "code": "AGRICULTURE"
+    },
+    {
+      "name": "Horticulture",
+      "category": "skill_elective",
+      "code": "HORTICULTURE"
+    },
+    {
+      "name": "Design",
+      "category": "skill_elective",
+      "code": "DESIGN"
+    },
+    {
+      "name": "Geospatial Technology",
+      "category": "skill_elective",
+      "code": "GEOSPATIAL_TECHNOLOGY"
+    }
+  ],
+  "csIdentifier": [
+    {
+      "name": "1st A Section",
+      "code": "1A"
+    },
+    {
+      "name": "1st B Section",
+      "code": "1B"
+    },
+    {
+      "name": "1st C Section",
+      "code": "1C"
+    },
+    {
+      "name": "1st D Section",
+      "code": "1D"
+    },
+    {
+      "name": "2nd A Section",
+      "code": "2A"
+    },
+    {
+      "name": "2nd B Section",
+      "code": "2B"
+    },
+    {
+      "name": "2nd C Section",
+      "code": "2C"
+    },
+    {
+      "name": "2nd D Section",
+      "code": "2D"
+    },
+    {
+      "name": "3rd A Section",
+      "code": "3A"
+    },
+    {
+      "name": "3rd B Section",
+      "code": "3B"
+    },
+    {
+      "name": "3rd C Section",
+      "code": "3C"
+    },
+    {
+      "name": "3rd D Section",
+      "code": "3D"
+    },
+    {
+      "name": "4th A Section",
+      "code": "4A"
+    },
+    {
+      "name": "4th B Section",
+      "code": "4B"
+    },
+    {
+      "name": "4th C Section",
+      "code": "4C"
+    },
+    {
+      "name": "4th D Section",
+      "code": "4D"
+    },
+    {
+      "name": "5th A Section",
+      "code": "5A"
+    },
+    {
+      "name": "5th B Section",
+      "code": "5B"
+    },
+    {
+      "name": "5th C Section",
+      "code": "5C"
+    },
+    {
+      "name": "5th D Section",
+      "code": "5D"
+    },
+    {
+      "name": "6th A Section",
+      "code": "6A"
+    },
+    {
+      "name": "6th B Section",
+      "code": "6B"
+    },
+    {
+      "name": "6th C Section",
+      "code": "6C"
+    },
+    {
+      "name": "6th D Section",
+      "code": "6D"
+    },
+    {
+      "name": "7th A Section",
+      "code": "7A"
+    },
+    {
+      "name": "7th B Section",
+      "code": "7B"
+    },
+    {
+      "name": "7th C Section",
+      "code": "7C"
+    },
+    {
+      "name": "7th D Section",
+      "code": "7D"
+    },
+    {
+      "name": "8th A Section",
+      "code": "8A"
+    },
+    {
+      "name": "8th B Section",
+      "code": "8B"
+    },
+    {
+      "name": "8th C Section",
+      "code": "8C"
+    },
+    {
+      "name": "8th D Section",
+      "code": "8D"
+    },
+    {
+      "name": "9th A Section",
+      "code": "9A"
+    },
+    {
+      "name": "9th B Section",
+      "code": "9B"
+    },
+    {
+      "name": "9th C Section",
+      "code": "9C"
+    },
+    {
+      "name": "9th D Section",
+      "code": "9D"
+    },
+    {
+      "name": "10th A Section",
+      "code": "10A"
+    },
+    {
+      "name": "10th B Section",
+      "code": "10B"
+    },
+    {
+      "name": "10th C Section",
+      "code": "10C"
+    },
+    {
+      "name": "10th D Section",
+      "code": "10D"
+    }
+  ]
+}

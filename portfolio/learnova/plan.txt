@@ -1,0 +1,39 @@
+- We want to build a lms platform using MERN stack with modern UI view,
+for state use context api and for routing use react router dom v6 and for styling use tailwind css
+
+- there are 2 types of users admin and student
+- admin can add, update, delete courses
+- student can enroll in courses
+- admin can publish or unpublish courses
+- course has the following fields
+    -  title and description
+    -  prerequisites
+    -  image
+    -  price
+    -  discount
+    -  duration
+    -  category
+    -  sub category
+    -  tags
+    -  instructors
+    -  students
+    -  rating
+    -  reviews
+    -  enrollments
+    -  status (published, draft, unpublish)
+    -  created at
+    -  updated at
+    -  deleted at
+- course has chapters & chapters has sections
+- chapters
+    -  title and description
+- sections
+    -  title
+    -  image
+    -  video
+    -  pdf
+    -  duration
+    -  status (published, draft, unpublish)
+    -  created at
+    -  updated at
+    -  deleted at

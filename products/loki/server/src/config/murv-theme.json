@@ -1,0 +1,208 @@
+{
+  "metadata": {
+    "name": "UI Configuration",
+    "version": "0.0.1",
+    "description": "UI Configuration for the application"
+  },
+  "layout": "left_to_right",
+  "colors": {
+    "surface": {
+      "neutral": {
+        "default": "#ffffff",
+        "hover": "#fafafa",
+        "pressed": "#f5f5f5"
+      },
+      "brand": {
+        "default": "#2a55e5",
+        "hover": "#1c41d6",
+        "pressed": "#112ab8"
+      },
+      "accent": {
+        "default": "#ffc200",
+        "hover": "#f9a825",
+        "pressed": "#ed9416"
+      },
+      "information": {
+        "default": "#fafafa",
+        "hover": "#f5f5f5",
+        "pressed": "#eeeeee"
+      },
+      "inverse": {
+        "default": "#212121",
+        "hover": "#424242",
+        "pressed": "#666666"
+      },
+      "success": {
+        "default": "#e7f8ec",
+        "hover": "#b9ebc8",
+        "pressed": "#8adea3"
+      },
+      "warning": {
+        "default": "#fef7e9",
+        "hover": "#f5efd4",
+        "pressed": "#fdfaf9"
+      },
+      "danger": {
+        "default": "#f5baba",
+        "hover": "#f9cbce",
+        "pressed": "#12a29e"
+      },
+      "selected": {
+        "default": "#f0f5ff",
+        "hover": "#c9e1ff",
+        "pressed": "#abc8ff"
+      },
+      "disabled": {
+        "default": "#fafafa",
+        "hover": "#fafafa",
+        "pressed": "#fafafa"
+      }
+    },
+    "tag": {
+      "promotion": "#c70055",
+      "saving": "#ffe43b",
+      "coupon": "#00b2a9",
+      "category": "#aeeee8",
+      "recommended": "#212121"
+    },
+    "text": {
+      "primary": "#212121",
+      "secondary": "#666666",
+      "brand": "#2a55e5",
+      "information": "#2a55e5",
+      "inverse": "#ffffff",
+      "success": "#1d9934",
+      "warning": "#bb129",
+      "danger": "#df4535",
+      "selected": "#2a55e5",
+      "disabled": "#9e9e9e"
+    },
+    "skeleton": {
+      "neutral": "#f5f5f5",
+      "subtle": "#fafafa"
+    },
+    "icon": {
+      "primary": "#212121",
+      "secondary": "#666666",
+      "brand": "#2a55e5",
+      "information": "#2a55e5",
+      "inverse": "#ffffff",
+      "success": "#1d9934",
+      "warning": "#bb129",
+      "danger": "#df4535",
+      "selected": "#2a55e5",
+      "disabled": "#e0e0e0"
+    },
+    "stroke": {
+      "primary": "#666666",
+      "secondary": "#f5f5f5",
+      "brand": "#2a55e5",
+      "brandlight": "#75a1ff",
+      "accent": "#ffc200",
+      "information": "#75a1ff",
+      "inverse": "#ffffff",
+      "success": "#6adba3",
+      "warning": "#fddf9f",
+      "danger": "#df4535",
+      "dangerlight": "#f2a09e",
+      "selected": "#2a55e5",
+      "disabled": "#e0e0e0"
+    }
+  },
+  "spacing": {
+    "0": "0px",
+    "xxxs": "2px",
+    "xxs": "4px",
+    "xs": "6px",
+    "s": "8px",
+    "m": "10px",
+    "l": "12px",
+    "xl": "16px",
+    "xxl": "24px",
+    "xxxl": "32px"
+  },
+  "radius": {
+    "0": "0px",
+    "xxs": "2px",
+    "xs": "4px",
+    "s": "8px",
+    "m": "12px",
+    "l": "16px",
+    "xl": "20px",
+    "xxl": "24px",
+    "xxxl": "32px"
+  },
+  "stroke": {
+    "0": "0px",
+    "standard": "1px",
+    "thin": "2px",
+    "thick": "3px"
+  },
+  "shadow": {
+    "overflow": "0px 2px 4px 0px #00000000",
+    "overlay": "0px 4px 8px 0px #00000000",
+    "floating": "0px 8px 16px 0px #00000000"
+  },
+  "zIndex": {
+    "level0": 0,
+    "level1": 1,
+    "level2": 2,
+    "level3": 3,
+    "level99": 99
+  },
+  "aspectRatio": {
+    "square": "1/1",
+    "landscape": "4/3",
+    "portrait": "3/4",
+    "wide": "16/9"
+  },
+  "opacity": {
+    "disabled": "30%",
+    "loading": "20%",
+    "mask": "40%"
+  },
+  "typography": {
+    "heading": {
+      "xs": {
+        "weight": 500,
+        "size": "15px",
+        "letterSpacing": "15px",
+        "lineHeight": "24px"
+      },
+      "m": {
+        "weight": 500,
+        "size": "17px",
+        "letterSpacing": "15px",
+        "lineHeight": "24px"
+      },
+      "l": {
+        "weight": 500,
+        "size": "19px",
+        "letterSpacing": "15px",
+        "lineHeight": "28px"
+      }
+    },
+    "body": {
+      "s": {
+        "weight": 500,
+        "size": "13px",
+        "letterSpacing": "0px",
+        "lineHeight": "20px"
+      },
+      "sBold": {
+        "weight": 600,
+        "size": "13px",
+        "letterSpacing": "0px",
+        "lineHeight": "20px"
+      }
+    },
+    "subtext": {
+      "s": {
+        "weight": 400,
+        "size": "11px",
+        "letterSpacing": "15px",
+        "lineHeight": "16px"
+      }
+    }
+  }
+}

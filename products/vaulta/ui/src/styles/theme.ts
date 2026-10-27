@@ -1,0 +1,112 @@
+export const theme = {
+  colors: {
+    primary: {
+      main: '#2563eb',
+      light: '#3b82f6',
+      dark: '#1d4ed8',
+      contrast: '#ffffff',
+    },
+    secondary: {
+      main: '#64748b',
+      light: '#94a3b8',
+      dark: '#475569',
+      contrast: '#ffffff',
+    },
+    success: {
+      main: '#10b981',
+      light: '#34d399',
+      dark: '#059669',
+      contrast: '#ffffff',
+    },
+    warning: {
+      main: '#f59e0b',
+      light: '#fbbf24',
+      dark: '#d97706',
+      contrast: '#ffffff',
+    },
+    error: {
+      main: '#ef4444',
+      light: '#f87171',
+      dark: '#dc2626',
+      contrast: '#ffffff',
+    },
+    background: {
+      default: '#f8fafc',
+      paper: '#ffffff',
+      secondary: '#f1f5f9',
+    },
+    text: {
+      primary: '#1e293b',
+      secondary: '#64748b',
+      disabled: '#94a3b8',
+      contrast: '#ffffff',
+    },
+    border: {
+      light: '#e2e8f0',
+      medium: '#cbd5e1',
+      dark: '#94a3b8',
+    },
+    shadow: {
+      light: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+      medium: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      large: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    },
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    xxl: '3rem',
+  },
+  borderRadius: {
+    sm: '0.25rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    full: '9999px',
+  },
+  typography: {
+    fontFamily: {
+      primary: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      mono: '"JetBrains Mono", "Fira Code", monospace',
+    },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+    },
+    fontWeight: {
+      normal: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+    },
+    lineHeight: {
+      tight: 1.25,
+      normal: 1.5,
+      relaxed: 1.75,
+    },
+  },
+  breakpoints: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280px',
+    '2xl': '1536px',
+  },
+  zIndex: {
+    dropdown: 1000,
+    sticky: 1020,
+    fixed: 1030,
+    modal: 1040,
+    popover: 1050,
+    tooltip: 1060,
+  },
+};

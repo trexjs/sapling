@@ -1,0 +1,617 @@
+{
+    "info": {
+        "name": "Typeform Clone API",
+        "description": "Complete API collection for Typeform Clone MERN application",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "version": "1.0.0"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/api/health",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "api",
+                        "health"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Forms",
+            "item": [
+                {
+                    "name": "Get All Forms",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "[\n  {\n    \"_id\": \"507f1f77bcf86cd799439011\",\n    \"title\": \"Customer Feedback Form\",\n    \"description\": \"Please share your feedback about our service\",\n    \"questions\": [\n      {\n        \"id\": \"q1\",\n        \"type\": \"text\",\n        \"title\": \"What is your name?\",\n        \"required\": true\n      }\n    ],\n    \"settings\": {\n      \"isPublished\": true,\n      \"allowMultipleResponses\": true,\n      \"collectEmail\": false,\n      \"showProgressBar\": true\n    },\n    \"createdAt\": \"2024-01-15T10:30:00.000Z\",\n    \"updatedAt\": \"2024-01-15T10:30:00.000Z\"\n  }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Form by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms",
+                                "{{formId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms",
+                                        "{{formId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439011\",\n  \"title\": \"Customer Feedback Form\",\n  \"description\": \"Please share your feedback about our service\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your name?\",\n      \"required\": true\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": true,\n    \"allowMultipleResponses\": true,\n    \"collectEmail\": false,\n    \"showProgressBar\": true\n  },\n  \"createdAt\": \"2024-01-15T10:30:00.000Z\",\n  \"updatedAt\": \"2024-01-15T10:30:00.000Z\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create New Form",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"New Survey Form\",\n  \"description\": \"A comprehensive survey to gather insights\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your name?\",\n      \"description\": \"Please enter your full name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your name\"\n    },\n    {\n      \"id\": \"q2\",\n      \"type\": \"email\",\n      \"title\": \"What is your email?\",\n      \"required\": true,\n      \"placeholder\": \"Enter your email address\"\n    },\n    {\n      \"id\": \"q3\",\n      \"type\": \"radio\",\n      \"title\": \"How satisfied are you with our service?\",\n      \"required\": true,\n      \"options\": [\"Very Satisfied\", \"Satisfied\", \"Neutral\", \"Dissatisfied\", \"Very Dissatisfied\"]\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": false,\n    \"allowMultipleResponses\": true,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"title\": \"New Survey Form\",\n  \"description\": \"A comprehensive survey to gather insights\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your name?\",\n      \"description\": \"Please enter your full name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your name\"\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": false,\n    \"allowMultipleResponses\": true,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  }\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439012\",\n  \"title\": \"New Survey Form\",\n  \"description\": \"A comprehensive survey to gather insights\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your name?\",\n      \"description\": \"Please enter your full name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your name\"\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": false,\n    \"allowMultipleResponses\": true,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  },\n  \"createdAt\": \"2024-01-15T10:30:00.000Z\",\n  \"updatedAt\": \"2024-01-15T10:30:00.000Z\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Form",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"Updated Survey Form\",\n  \"description\": \"Updated description for the survey\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your full name?\",\n      \"description\": \"Please enter your complete name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your full name\"\n    },\n    {\n      \"id\": \"q2\",\n      \"type\": \"email\",\n      \"title\": \"What is your email address?\",\n      \"required\": true,\n      \"placeholder\": \"Enter your email address\"\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": true,\n    \"allowMultipleResponses\": false,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms",
+                                "{{formId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"title\": \"Updated Survey Form\",\n  \"description\": \"Updated description for the survey\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your full name?\",\n      \"description\": \"Please enter your complete name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your full name\"\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": true,\n    \"allowMultipleResponses\": false,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  }\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms",
+                                        "{{formId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439012\",\n  \"title\": \"Updated Survey Form\",\n  \"description\": \"Updated description for the survey\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your full name?\",\n      \"description\": \"Please enter your complete name\",\n      \"required\": true,\n      \"placeholder\": \"Enter your full name\"\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": true,\n    \"allowMultipleResponses\": false,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  },\n  \"createdAt\": \"2024-01-15T10:30:00.000Z\",\n  \"updatedAt\": \"2024-01-15T11:30:00.000Z\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Publish/Unpublish Form",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"isPublished\": true\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms/{{formId}}/publish",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms",
+                                "{{formId}}",
+                                "publish"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"isPublished\": true\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms/{{formId}}/publish",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms",
+                                        "{{formId}}",
+                                        "publish"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439012\",\n  \"title\": \"Updated Survey Form\",\n  \"description\": \"Updated description for the survey\",\n  \"questions\": [\n    {\n      \"id\": \"q1\",\n      \"type\": \"text\",\n      \"title\": \"What is your full name?\",\n      \"required\": true\n    }\n  ],\n  \"settings\": {\n    \"isPublished\": true,\n    \"allowMultipleResponses\": false,\n    \"collectEmail\": true,\n    \"showProgressBar\": true\n  },\n  \"createdAt\": \"2024-01-15T10:30:00.000Z\",\n  \"updatedAt\": \"2024-01-15T11:30:00.000Z\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete Form",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "forms",
+                                "{{formId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/forms/{{formId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forms",
+                                        "{{formId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"message\": \"Form deleted successfully\"\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Responses",
+            "item": [
+                {
+                    "name": "Submit Form Response",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"formId\": \"507f1f77bcf86cd799439011\",\n  \"answers\": [\n    {\n      \"questionId\": \"q1\",\n      \"value\": \"John Doe\"\n    },\n    {\n      \"questionId\": \"q2\",\n      \"value\": \"john.doe@example.com\"\n    },\n    {\n      \"questionId\": \"q3\",\n      \"value\": \"Very Satisfied\"\n    }\n  ],\n  \"userEmail\": \"john.doe@example.com\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/responses",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "responses"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"formId\": \"507f1f77bcf86cd799439011\",\n  \"answers\": [\n    {\n      \"questionId\": \"q1\",\n      \"value\": \"John Doe\"\n    },\n    {\n      \"questionId\": \"q2\",\n      \"value\": \"john.doe@example.com\"\n    },\n    {\n      \"questionId\": \"q3\",\n      \"value\": \"Very Satisfied\"\n    }\n  ],\n  \"userEmail\": \"john.doe@example.com\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/responses",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "responses"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439013\",\n  \"formId\": \"507f1f77bcf86cd799439011\",\n  \"answers\": [\n    {\n      \"questionId\": \"q1\",\n      \"value\": \"John Doe\"\n    },\n    {\n      \"questionId\": \"q2\",\n      \"value\": \"john.doe@example.com\"\n    },\n    {\n      \"questionId\": \"q3\",\n      \"value\": \"Very Satisfied\"\n    }\n  ],\n  \"submittedAt\": \"2024-01-15T12:00:00.000Z\",\n  \"userEmail\": \"john.doe@example.com\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Responses by Form ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/responses/form/{{formId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "responses",
+                                "form",
+                                "{{formId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/responses/form/{{formId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "responses",
+                                        "form",
+                                        "{{formId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "[\n  {\n    \"_id\": \"507f1f77bcf86cd799439013\",\n    \"formId\": \"507f1f77bcf86cd799439011\",\n    \"answers\": [\n      {\n        \"questionId\": \"q1\",\n        \"value\": \"John Doe\"\n      },\n      {\n        \"questionId\": \"q2\",\n        \"value\": \"john.doe@example.com\"\n      },\n      {\n        \"questionId\": \"q3\",\n        \"value\": \"Very Satisfied\"\n      }\n    ],\n    \"submittedAt\": \"2024-01-15T12:00:00.000Z\",\n    \"userEmail\": \"john.doe@example.com\"\n  }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Response by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/responses/{{responseId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "responses",
+                                "{{responseId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/responses/{{responseId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "responses",
+                                        "{{responseId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"_id\": \"507f1f77bcf86cd799439013\",\n  \"formId\": \"507f1f77bcf86cd799439011\",\n  \"answers\": [\n    {\n      \"questionId\": \"q1\",\n      \"value\": \"John Doe\"\n    },\n    {\n      \"questionId\": \"q2\",\n      \"value\": \"john.doe@example.com\"\n    },\n    {\n      \"questionId\": \"q3\",\n      \"value\": \"Very Satisfied\"\n    }\n  ],\n  \"submittedAt\": \"2024-01-15T12:00:00.000Z\",\n  \"userEmail\": \"john.doe@example.com\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Response Statistics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/responses/stats/{{formId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "responses",
+                                "stats",
+                                "{{formId}}"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/api/responses/stats/{{formId}}",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "responses",
+                                        "stats",
+                                        "{{formId}}"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n  \"totalResponses\": 25,\n  \"uniqueResponses\": 20\n}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:5000",
+            "type": "string"
+        },
+        {
+            "key": "formId",
+            "value": "507f1f77bcf86cd799439011",
+            "type": "string"
+        },
+        {
+            "key": "responseId",
+            "value": "507f1f77bcf86cd799439013",
+            "type": "string"
+        }
+    ]
+}

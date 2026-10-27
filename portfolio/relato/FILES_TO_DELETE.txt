@@ -1,0 +1,37 @@
+FILES TO DELETE - Old Stepper Forms and Redundant Pages
+========================================================
+
+Please manually delete the following files as they are no longer used:
+
+OLD STEPPER FORMS:
+------------------
+loki/src/components/forms/SchoolOnboardingForm.tsx
+loki/src/components/forms/TeacherOnboardingForm.tsx
+
+OLD SEPARATE CREATE PAGES:
+---------------------------
+loki/src/pages/SchoolCreatePage.tsx
+loki/src/pages/TeacherCreatePage.tsx
+loki/src/pages/StudentCreatePage.tsx
+
+OLD SEPARATE EDIT PAGES:
+-------------------------
+loki/src/pages/SchoolEditPage.tsx
+loki/src/pages/TeacherEditPage.tsx
+loki/src/pages/StudentEditPage.tsx
+
+REASON:
+-------
+These files have been replaced by unified create/update forms in the modules folder:
+- modules/schools/SchoolForm.tsx
+- modules/teachers/TeacherForm.tsx
+- modules/students/StudentForm.tsx
+
+Each new form handles both create and update operations based on the route.
+
+STATUS:
+-------
+✅ New module forms created
+✅ Routes updated in App.tsx
+✅ Imports removed from App.tsx
+⚠️  Old files need manual deletion (PowerShell escaping issues)

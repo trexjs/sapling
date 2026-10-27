@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to School Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .welcome-title {
+            color: #27ae60;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-bottom: 30px;
+        }
+        .verification-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .verify-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .verify-button:hover {
+            background-color: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .school-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🏫 School Platform</div>
+            <h1 class="welcome-title">Welcome {{name}}!</h1>
+        </div>
+        
+        <div class="content">
+            <p>Thank you for joining our school platform! We're excited to have you as part of our educational community.</p>
+            
+            <div class="school-info">
+                <strong>School:</strong> {{schoolName}}
+            </div>
+            
+            <p>To get started and access all the features of our platform, please verify your email address by clicking the button below:</p>
+            
+            <div class="verification-box">
+                <p><strong>Email Verification Required</strong></p>
+                <a href="{{verificationLink}}" class="verify-button">Verify My Email</a>
+                <p style="font-size: 12px; margin-top: 10px;">
+                    If the button doesn't work, copy and paste this link into your browser:<br>
+                    <a href="{{verificationLink}}">{{verificationLink}}</a>
+                </p>
+            </div>
+            
+            <p>Once verified, you'll be able to:</p>
+            <ul>
+                <li>Access your personalized dashboard</li>
+                <li>View your academic information</li>
+                <li>Communicate with teachers and staff</li>
+                <li>Track your progress and attendance</li>
+            </ul>
+            
+            <p>If you have any questions or need assistance, please don't hesitate to contact our support team.</p>
+        </div>
+        
+        <div class="footer">
+            <p>This email was sent to you because you registered for an account on our school platform.</p>
+            <p>If you didn't create this account, please ignore this email.</p>
+            <p>&copy; 2024 School Platform. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

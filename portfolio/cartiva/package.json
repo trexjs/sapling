@@ -1,0 +1,24 @@
+{
+    "name": "rare-clothing-ecommerce",
+    "version": "1.0.0",
+    "description": "MERN stack ecommerce website for Rare clothing brand",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm run dev",
+        "client": "cd UI && npm run dev",
+        "install-all": "npm install && cd server && npm install && cd ../UI && npm install"
+    },
+    "keywords": [
+        "mern",
+        "ecommerce",
+        "clothing",
+        "react",
+        "nodejs"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

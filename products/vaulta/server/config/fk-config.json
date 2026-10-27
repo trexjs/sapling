@@ -1,0 +1,80 @@
+{
+  "theme": {
+    "layout": "LEFT_TO_RIGHT",
+    "ui": {}
+  },
+  "getFeatures": {
+    "promotionsBanner": {
+      "name": "lorem...",
+      "video_link": "https://youtu.be/N0fHAg9aoyY?feature=shared"
+    },
+    "dcs": {
+      "enableUniversalSearch": true
+    }
+  },
+  "userConfig": {
+    "profile": {
+      "seller_id": "auyksn1mnx5c1rx5",
+      "display_name": "testsellersupport",
+      "business_name": "COAL INDIA",
+      "preferences": {
+        "mode": "DARK",
+        "currency": "INR",
+        "lang": "ENG"
+      }
+    },
+    "access": {
+      "loki": {
+        "stream": false,
+        "present": false,
+        "records": false
+      }
+    },
+    "platforms": [
+      {
+        "mobile": false
+      },
+      {
+        "web": true
+      }
+    ],
+    "default": {
+      "bastion": true,
+      "clickSupport": true
+    }
+  },
+  "policies": {
+    "dataRetention": 60,
+    "tier": {
+      "current": "BASIC",
+      "final": "ENTERPRISE"
+    },
+    "appId": "System Generated"
+  },
+  "uiConfig": {
+    "partnersConfig": {
+      "homePage": {
+        "images": {
+          "hero": {
+            "desktop": "https://img1a.flixcart.com/fk-p-fk-sp-partner-dashboard/17th-Nov-20225WALx1coqElFYGtLXICArgg7sQIVGGCB/landing_page_top_banner_desktop.jpg",
+            "mobile": "https://static-assets-web.flixcart.com/fk-p-fk-sellerhub/21st-Nov-2022ErVbXKy_KT8nZ4ms9J_ECXznqUM2AZ6-/Banner_HP_Mobile.png"
+          }
+        },
+        "requestsFullfilledCount": "14,000+",
+        "sellersCount": "30,000+",
+        "verifiedPartnersCount": "4,000+"
+      }
+    },
+    "tallyReportsVideo": "https://youtu.be/N0fHAg9aoyY?feature=shared",
+    "showInventoryUpdateLagBanner": false,
+    "pollingDurationConfig": {
+      "homePageCountPolling": "1800000",
+      "orderProcessingPolling": "30000"
+    },
+    "enableServiceWorker": true
+  },
+  "test": 123,
+  "sample": {
+    "name": "raksjfj"
+  }
+}

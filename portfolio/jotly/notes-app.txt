@@ -1,0 +1,37 @@
+- 1. Purpose
+
+Define the functional and non-functional requirements of Task Master — a task management app that enhances productivity and organization through intuitive task tracking.
+
+- A MERN stack project, create a new folder notes-app and place the code here
+---
+
+2. Objectives
+
+Simplify task creation and tracking
+
+Enable organization through categories and sub-tasks
+
+Integrate with calendars for better time visibility
+
+Provide reminders and repeat scheduling options
+
+Offer data visualization via dashboard summaries
+
+---
+
+3. Key Features & Requirements
+
+Feature	Description	Priority
+
+Task Creation	Create a new task with a name and optional details.	High
+Subtasks	Add child/subtasks under a parent task.	High
+Categories	Group tasks under specific categories.	Medium
+Mark Favourite	Star or mark tasks as important.	Medium
+Due Date	Set a date for completion.	High
+Reminders	Enable reminders for specific times.	High
+Repeat Task	Configure recurring tasks (daily, weekly, etc.).	Medium
+Notes	Add additional context or description to a task.	Low
+Attachments	Attach files, images, or video links.	Medium
+Mark as Done	Mark completed tasks.	High
+Duplicate/Delete	Clone or remove a task.	Medium
+Views (UI)	Tasks Page, Calendar Page, Dashboard Page.	High

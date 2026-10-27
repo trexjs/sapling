@@ -1,0 +1,16 @@
+We need a revamp of the Attendance module.
+- We need a dropdown for selecting school
+- We need a dropdown for selecting class & section
+- We need a dropdown for selecting date
+
+Table & UI behavior
+- When we select a class & section from a dropdown, students list should be populated in the table
+- We can select multiple students from the table or all students at once table feature
+- on click of save button, attendance should be saved
+- on click of individual student redirect me to the details student page were we can see the attendance.
+
+
+
+on onclick of individual student redirect me to the details student page were we can see the attendance under 
+academic tab , where we can see the attendance of the student by date filter
+do needfull changes to make it work on UI & backend
