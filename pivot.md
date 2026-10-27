@@ -1,4 +1,6 @@
 Now the direction of Sapling Cloud is much clearer. I think this is a better-defined product than attempting to build another AWS, GCP, or Azure.
+<img width="1491" height="1055" alt="Sapling Cloud High-Level Architecture Diagram" src="https://github.com/user-attachments/assets/624dfa39-d6c0-4827-900f-af52fb3ce844" />
+
 
 What you're describing is essentially a SaaS Application Development Framework + Infrastructure Orchestration Platform.
 
